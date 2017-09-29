@@ -40,25 +40,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     {___x___, ___x___, ___x___, KC_LGUI, KC_LCTL,       MKC_SHF, KC_LALT, ___x___, ___x___, ___x___ }
   },
   [L_SYM_SHF] = {
-    {___x___, KC_PSCR, KC_VOLU, ___x___, ___x___,       ___x___, ___x___, ___x___, ___x___, ___x___ },
-    {___x___, KC_WBAK, KC_VOLD, KC_WFWD, ___x___,       ___x___, ___x___, ___x___, ___x___, ___x___ },
-    {MKC_NAV, ___x___, KC_MUTE, ___x___, ___x___,       ___x___, ___x___, ___x___, ___x___, MKC_SYM },
+    {___x___, ___x___, KC_LABK, KC_RABK, ___x___,       KC_DOT , KC_7   , KC_8   , KC_9   , ___x___ },
+    {___x___, ___x___, KC_LCBR, KC_RCBR, KC_PIPE,       KC_PLUS, KC_4   , KC_5   , KC_6   , ___x___ },
+    {MKC_NAV, ___x___, KC_LBRC, KC_RBRC, KC_BSLS,       KC_0   , KC_1   , KC_2   , KC_3   , MKC_SYM },
     {___x___, ___x___, ___x___, ___x___, ___x___,       ___x___, ___x___, ___x___, ___x___, ___x___ },
     {___x___, ___x___, ___x___, KC_LGUI, KC_LCTL,       MKC_SHF, KC_LALT, ___x___, ___x___, ___x___ }
   },
   [L_NAV] = {
-    {___x___, ___x___, KC_LABK, KC_RABK, ___x___,       KC_MENU, KC_HOME, KC_UP  , KC_END , KC_INS  },
-    {___x___, KC_ESC , KC_LCBR, KC_RCBR, KC_PIPE,       KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, ___x___ }, // TODO 5x acceleration
-    {MKC_NAV, KC_TAB , KC_LBRC, KC_RBRC, KC_BSLS,       KC_PGDN, KC_BSPC, KC_ENT , KC_COMM, MKC_SYM },
+    {___x___, KC_PSCR, KC_ESC , ___x___, KC_VOLU,       KC_MENU, KC_HOME, KC_UP  , KC_END , KC_INS  },
+    {___x___, ___x___, ___x___, KC_TAB , KC_VOLD,       KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, ___x___ }, // TODO 5x acceleration
+    {MKC_NAV, ___x___, KC_WBAK, KC_WFWD, KC_MUTE,       KC_PGDN, KC_BSPC, KC_ENT , KC_COMM, MKC_SYM }, // TODO more media buttons
     {___x___, ___x___, ___x___, ___x___, ___x___,       ___x___, ___x___, ___x___, ___x___, ___x___ },
     {___x___, ___x___, ___x___, KC_LGUI, KC_LCTL,       MKC_SHF, KC_LALT, ___x___, ___x___, ___x___ }
   },
   [L_SYM_NAV] = {
-    {___x___, KC_F1  , KC_F2  , KC_F3  , KC_F4  ,       KC_DOT , KC_7   , KC_8   , KC_9   , ___x___ },
-    {___x___, KC_F5  , KC_F6  , KC_F7  , KC_F8  ,       KC_PLUS, KC_4   , KC_5   , KC_6   , ___x___ },
-    {MKC_NAV, KC_F9  , KC_F10 , KC_F11 , KC_F12 ,       KC_0   , KC_1   , KC_2   , KC_3   , MKC_SYM },
-    {___x___, ___x___, ___x___, ___x___, ___x___,       ___x___, ___x___, ___x___, ___x___, ___x___ },
-    {___x___, ___x___, ___x___, KC_LGUI, KC_LCTL,       MKC_SHF, KC_LALT, ___x___, ___x___, ___x___ }
+    {___x___, KC_F1  , KC_F2  , KC_F3  , KC_F4  ,       ___x___, ___x___, KC_MS_U, ___x___, ___x___ },
+    {___x___, KC_F5  , KC_F6  , KC_F7  , KC_F8  ,       KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, ___x___ },
+    {MKC_NAV, KC_F9  , KC_F10 , KC_F11 , KC_F12 ,       KC_WH_D, KC_BTN1, KC_BTN2, KC_BTN3, MKC_SYM },
+    {___x___, ___x___, ___x___, ___x___, ___x___,       ___x___, KC_ACL2, KC_ACL1, ___x___, ___x___ }, // TODO move ACLx to long press
+    {___x___, ___x___, ___x___, KC_LGUI, KC_LCTL,       MKC_SHF, KC_LALT, KC_ACL0, ___x___, ___x___ }
   },
 };
 
