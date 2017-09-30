@@ -6,7 +6,7 @@ enum mitosis_mod {
   NAV = 2,
 };
 
-enum mkc {
+enum mitosis_kc {
   MKC_SHF = SAFE_RANGE + SHF,
   MKC_SYM = SAFE_RANGE + SYM,
   MKC_NAV = SAFE_RANGE + NAV,
@@ -73,18 +73,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     {S(___x___), S(___x___), S(___x___), S(KC_LGUI), S(KC_LCTL),       S(MKC_SHF), S(KC_LALT), S(KC_ACL0), S(___x___), S(___x___) }},
 };
 
-static bool mkc_state[3] = {0, 0, 0};
+static bool mod_state[3] = {0, 0, 0};  // indexed with mitosis_mod
 
 uint16_t current_layer(void) {
-  return (mkc_state[SHF] << SHF) | (mkc_state[SYM] << SYM) | (mkc_state[NAV] << NAV);
+  return (mod_state[SHF] << SHF) | (mod_state[SYM] << SYM) | (mod_state[NAV] << NAV);
 }
 
 bool process_record_user(uint16_t kc, keyrecord_t *record) {
-  if (kc >= SAFE_RANGE && kc < SAFE_RANGE + 3) {
-    layer_off(current_layer());
-    mkc_state[kc - SAFE_RANGE] = record->event.pressed;
-    layer_on(current_layer());
-    return false;
-  }
-  return true;
+  kc -= SAFE_RANGE;
+  if (kc >= 3) return true;
+  layer_off(current_layer());
+  mod_state[kc] = record->event.pressed;
+  layer_on(current_layer());
+  return false;
 }
