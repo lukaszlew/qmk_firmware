@@ -13,6 +13,41 @@ enum mitosis_kc {
 };
 
 #define ___x___ KC_NO
+// All layers have the same 2 thumb rows:
+//     |   |   |   |   |    |   |   |   |   |
+//     |   |   |WIN|CTR|    |SHF|ALT|   |   |
+//
+// base layer
+// | q | w | f | p | b |    | j | l | u | y | x |
+// | a | r | s | t | g |    | m | n | e | i | o |
+// |NAV| z | c | d | v |    | k | h |spc| . |SYM|
+//
+// Shift
+// | Q | W | F | P | B |    | J | L | U | Y | X |
+// | A | R | S | T | G |    | M | N | E | I | O |
+// |NAV| Z | C | D | V |    | K | H |spc| , |SYM|
+//
+// Sym
+// | ~ | @ | # | $ | % |    | ^ | & | * |   |xxx|
+// | ` | : | ( | ) | - |    | + | " | ! | ? |xxx|
+// |NAV| ; | < | > | _ |    | = | ' |spc| / |SYM|
+//
+// Sym + Shift
+// |   |   |   |   |   |    | . | 7 | 8 | 9 |xxx|
+// |   |   | { | } | | |    | + | 4 | 5 | 6 |xxx|
+// |NAV|   | [ | ] | \ |    | 0 | 1 | 2 | 3 |SYM|
+//
+// Nav
+// |xxx|PSc|esc|   | v+|    |men|hom| aU|end|ins|
+// |xxx|   |   |tab| v-|    |pgu| aL| aD| aR|   |
+// |NAV|   |bak|fwd|mut|    |pgd|bck|ent|del|SYM|
+//
+// Nav + Sym
+// |xxx| f1| f2| f3| f4|    |   |   |msU|   |   |
+// |xxx| f5| f6| f7| f8|    | wu|msL|msD|msR|   |
+// |NAV| f9|f10|f11|f12|    | wd|lbm|mbm|rbm|SYM|
+//
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // base layer
@@ -33,12 +68,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [(1 << SYM)] = {
     {KC_TILD   , KC_AT   ,   KC_HASH   , KC_DLR   ,  KC_PERC   ,       KC_CIRC   , KC_AMPR   , KC_ASTR   , ___x___   , ___x___    },
     {KC_GRV    , KC_COLN   , KC_LPRN   , KC_RPRN   , KC_MINS   ,       KC_PLUS   , KC_DQUO   , KC_EXLM   , KC_QUES   , ___x___    },
-    {MKC_NAV   , KC_SCLN   , ___x___   , ___x___   , KC_UNDS   ,       KC_PEQL   , KC_QUOT   , KC_SPC   ,  KC_SLSH   , MKC_SYM    },
+    {MKC_NAV   , KC_SCLN   , KC_LABK   , KC_RABK   , KC_UNDS   ,       KC_PEQL   , KC_QUOT   , KC_SPC   ,  KC_SLSH   , MKC_SYM    },
     {___x___   , ___x___   , ___x___   , ___x___   , ___x___   ,       ___x___   , ___x___   , ___x___   , ___x___   , ___x___    },
     {___x___   , ___x___   , ___x___   , KC_LGUI   , KC_LCTL   ,       MKC_SHF   , KC_LALT   , ___x___   , ___x___   , ___x___    }},
   // Sym + Shift
   [(1 << SYM) | (1 << SHF)] = {
-    {___x___   , ___x___   , KC_LABK   , KC_RABK   , ___x___   ,       KC_DOT    , KC_7      , KC_8      , KC_9      , ___x___    },
+    {___x___   , ___x___   , ___x___   , ___x___   , ___x___   ,       KC_DOT    , KC_7      , KC_8      , KC_9      , ___x___    },
     {___x___   , ___x___   , KC_LCBR   , KC_RCBR   , KC_PIPE   ,       KC_PLUS   , KC_4      , KC_5      , KC_6      , ___x___    },
     {MKC_NAV   , ___x___   , KC_LBRC   , KC_RBRC   , KC_BSLS   ,       KC_0      , KC_1      , KC_2      , KC_3      , MKC_SYM    },
     {___x___   , ___x___   , ___x___   , ___x___   , ___x___   ,       ___x___   , ___x___   , ___x___   , ___x___   , ___x___    },
