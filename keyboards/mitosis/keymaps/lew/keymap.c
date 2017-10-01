@@ -12,7 +12,6 @@ enum mitosis_kc {
   MKC_NAV = SAFE_RANGE + NAV,
 };
 
-#define ___x___ KC_NO
 // All layers have the same 2 thumb rows:
 //     |   |   |   |   |    |   |   |   |   |
 //     |   |   |WIN|CTR|    |SHF|ALT|   |   |
@@ -48,6 +47,7 @@ enum mitosis_kc {
 // |NAV| f9|f10|f11|f12|    | wd|lbm|mbm|rbm|SYM|
 //
 
+#define ___x___ KC_NO
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // base layer
