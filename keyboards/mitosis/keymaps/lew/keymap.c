@@ -13,38 +13,38 @@ enum mitosis_kc {
 };
 
 // All layers have the same 2 thumb rows:
-//     |   |   |   |   |    |   |   |   |   |
-//     |   |   |WIN|CTR|    |SHF|ALT|   |   |
+//     |               |    |               |
+//     |        WIN CTR|    |SHF ALT        |
 //
 // base layer
-// | q | w | f | p | b |    | j | l | u | y | x |
-// | a | r | s | t | g |    | m | n | e | i | o |
-// |NAV| z | c | d | v |    | k | h |spc| . |SYM|
+// | q   w   f   p   b |    | j   l   u   y   x |
+// | a   r   s   t   g |    | m   n   e   i   o |
+// |NAV  z   c   d   v |    | k   h  spc  .  SYM|
 //
 // Shift
-// | Q | W | F | P | B |    | J | L | U | Y | X |
-// | A | R | S | T | G |    | M | N | E | I | O |
-// |NAV| Z | C | D | V |    | K | H |spc| , |SYM|
+// | Q   W   F   P   B |    | J   L   U   Y   X |
+// | A   R   S   T   G |    | M   N   E   I   O |
+// |NAV  Z   C   D   V |    | K   H  spc  ,  SYM|
 //
 // Sym
-// | ~ | @ | # | $ | % |    | ^ | & | * |   |xxx|
-// | ` | : | ( | ) | - |    | + | " | ! | ? |xxx|
-// |NAV| ; | < | > | _ |    | = | ' |spc| / |SYM|
+// | ~   @   #   $   % |    | ^   &   *      xxx|
+// | `   :   (   )   - |    | +   "   !   ?  xxx|
+// |NAV  ;   <   >   _ |    | =   '  spc  /  SYM|
 //
 // Sym + Shift
-// |   |   |   |   |   |    | . | 7 | 8 | 9 |xxx|
-// |   |   | { | } | | |    | + | 4 | 5 | 6 |xxx|
-// |NAV|   | [ | ] | \ |    | 0 | 1 | 2 | 3 |SYM|
+// |                   |    | .   7   8   9  xxx|
+// |         {   }     |    | +   4   5   6  xxx|
+// |NAV      [   ]   \ |    | 0   1   2   3  SYM|
 //
 // Nav
-// |xxx|PSc|esc|   | v+|    |men|hom| aU|end|ins|
-// |xxx|   |   |tab| v-|    |pgu| aL| aD| aR|   |
-// |NAV|   |bak|fwd|mut|    |pgd|bck|ent|del|SYM|
+// |xxx PSc esc      v+|    |men hom  aU end ins|
+// |xxx         tab  v-|    |pgu  aL  aD  aR    |
+// |NAV     bak fwd mut|    |pgd bck ent del SYM|
 //
 // Nav + Sym
-// |xxx| f1| f2| f3| f4|    |   |   |msU|   |   |
-// |xxx| f5| f6| f7| f8|    | wu|msL|msD|msR|   |
-// |NAV| f9|f10|f11|f12|    | wd|lbm|mbm|rbm|SYM|
+// |xxx  f1  f2  f3  f4|    |        msU        |
+// |xxx  f5  f6  f7  f8|    | wu msL msD msR    |
+// |NAV  f9 f10 f11 f12|    | wd lbm mbm rbm SYM|
 //
 
 #define ___x___ KC_NO
