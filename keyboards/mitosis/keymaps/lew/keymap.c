@@ -39,7 +39,7 @@ enum mitosis_kc {
 // Nav
 // |xxx PSc esc      v+|    |men hom  aU end ins|
 // |xxx         tab  v-|    |pgu  aL  aD  aR    |
-// |NAV     bak fwd mut|    |pgd bck ent del SYM|
+// |NAV     bak fwd mut|    |pgd ent bsp del SYM|
 //
 // Nav + Sym
 // |xxx  f1  f2  f3  f4|    |        msU        |
@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [(1 << NAV)] = {
     {___x___   , KC_PSCR   , KC_ESC    , ___x___   , KC_VOLU   ,       KC_MENU   , KC_HOME   , KC_UP     , KC_END    , KC_INS     },
     {___x___   , ___x___   , ___x___   , KC_TAB    , KC_VOLD   ,       KC_PGUP   , KC_LEFT   , KC_DOWN   , KC_RGHT   , ___x___    }, // TODO 5x acceleration
-    {MKC_NAV   , ___x___   , KC_WBAK   , KC_WFWD   , KC_MUTE   ,       KC_PGDN   , KC_BSPC   , KC_ENT    , KC_DEL    , MKC_SYM    }, // TODO more media buttons
+    {MKC_NAV   , ___x___   , KC_WBAK   , KC_WFWD   , KC_MUTE   ,       KC_PGDN   , KC_ENT    , KC_BSPC   , KC_DEL    , MKC_SYM    }, // TODO more media buttons
     {___x___   , ___x___   , ___x___   , ___x___   , ___x___   ,       ___x___   , ___x___   , ___x___   , ___x___   , ___x___    },
     {___x___   , ___x___   , ___x___   , KC_LGUI   , KC_LCTL   ,       MKC_SHF   , KC_LALT   , ___x___   , ___x___   , ___x___    }},
   // Nav + Shift
