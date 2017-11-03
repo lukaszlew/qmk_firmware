@@ -37,14 +37,15 @@ enum mitosis_kc {
 // |NAV      [   ]   \ |    | 0   1   2   3  SYM|
 //
 // Nav
-// |xxx PSc esc      v+|    |men hom  aU end ins|
-// |xxx         tab  v-|    |pgu  aL  aD  aR    |
-// |NAV     bak fwd mut|    |pgd ent bsp del SYM|
+//
+// |xxx hom  aU end pgu|    | v+         PSc ins|
+// |xxx  aL  aD aR  pgd|    | v- bak men fwd    |
+// |NAV bsp ent tab esc|    |mut         del SYM|
 //
 // Nav + Sym
-// |xxx  f1  f2  f3  f4|    |        msU        |
-// |xxx  f5  f6  f7  f8|    | wu msL msD msR    |
-// |NAV  f9 f10 f11 f12|    | wd lbm mbm rbm SYM|
+// |xxx  f1  f2  f3  f4|    | wu     msU        |
+// |xxx  f5  f6  f7  f8|    | wd msL msD msR    |
+// |NAV  f9 f10 f11 f12|    |    lbm mbm rbm SYM|
 //
 
 #define ___x___ KC_NO
@@ -80,32 +81,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     {___x___   , ___x___   , ___x___   , KC_LGUI   , KC_LCTL   ,       MKC_SHF   , KC_LALT   , ___x___   , ___x___   , ___x___    }},
   // Nav
   [(1 << NAV)] = {
-    {___x___   , KC_PSCR   , KC_ESC    , ___x___   , KC_VOLU   ,       KC_MENU   , KC_HOME   , KC_UP     , KC_END    , KC_INS     },
-    {___x___   , ___x___   , ___x___   , KC_TAB    , KC_VOLD   ,       KC_PGUP   , KC_LEFT   , KC_DOWN   , KC_RGHT   , ___x___    }, // TODO 5x acceleration
-    {MKC_NAV   , ___x___   , KC_WBAK   , KC_WFWD   , KC_MUTE   ,       KC_PGDN   , KC_ENT    , KC_BSPC   , KC_DEL    , MKC_SYM    }, // TODO more media buttons
+    {___x___   , KC_HOME   , KC_UP     , KC_END    , KC_PGUP   ,       KC_VOLU   , ___x___   , ___x___   , KC_PSCR   , KC_INS     },
+    {___x___   , KC_LEFT   , KC_DOWN   , KC_RGHT   , KC_PGDN   ,       KC_VOLD   , KC_WBAK   , KC_MENU   , KC_WFWD   , ___x___    }, // TODO 5x acceleration
+    {MKC_NAV   , KC_BSPC   , KC_ENT    , KC_TAB    , KC_ESC    ,       KC_MUTE   , ___x___   , ___x___   , KC_DEL    , MKC_SYM    }, // TODO more media buttons
     {___x___   , ___x___   , ___x___   , ___x___   , ___x___   ,       ___x___   , ___x___   , ___x___   , ___x___   , ___x___    },
     {___x___   , ___x___   , ___x___   , KC_LGUI   , KC_LCTL   ,       MKC_SHF   , KC_LALT   , ___x___   , ___x___   , ___x___    }},
   // Nav + Shift
   [(1 << NAV) | (1 << SHF)] = {
-    {S(___x___), S(KC_PSCR), S(KC_ESC) , S(___x___), S(KC_VOLU),       S(KC_MENU), S(KC_HOME), S(KC_UP)  , S(KC_END) , S(KC_INS)  },
-    {S(___x___), S(___x___), S(___x___), S(KC_TAB) , S(KC_VOLD),       S(KC_PGUP), S(KC_LEFT), S(KC_DOWN), S(KC_RGHT), S(___x___) }, // TODO 5x acceleration
-    {S(MKC_NAV), S(___x___), S(KC_WBAK), S(KC_WFWD), S(KC_MUTE),       S(KC_PGDN), S(KC_BSPC), S(KC_ENT) , S(KC_DEL) , S(MKC_SYM) }, // TODO more media buttons
+    {S(___x___), S(KC_HOME), S(KC_UP)  , S(KC_END) , S(KC_PGUP),       S(KC_VOLU), S(___x___), S(___x___), S(KC_PSCR), S(KC_INS)  },
+    {S(___x___), S(KC_LEFT), S(KC_DOWN), S(KC_RGHT), S(KC_PGDN),       S(KC_VOLD), S(KC_WBAK), S(KC_MENU), S(KC_WFWD), S(___x___) }, // TODO 5x acceleration
+    {S(MKC_NAV), S(KC_BSPC), S(KC_ENT) , S(KC_TAB) , S(KC_ESC) ,       S(KC_MUTE), S(___x___), S(___x___), S(KC_DEL) , S(MKC_SYM) }, // TODO more media buttons
     {S(___x___), S(___x___), S(___x___), S(___x___), S(___x___),       S(___x___), S(___x___), S(___x___), S(___x___), S(___x___) },
     {S(___x___), S(___x___), S(___x___), S(KC_LGUI), S(KC_LCTL),       S(MKC_SHF), S(KC_LALT), S(___x___), S(___x___), S(___x___) }},
   // Nav + Sym
   [(1 << NAV) | (1 << SYM)] = {
-    {___x___   , KC_F1     , KC_F2     , KC_F3     , KC_F4     ,       ___x___   , ___x___   , KC_MS_U   , ___x___   , ___x___    },
-    {___x___   , KC_F5     , KC_F6     , KC_F7     , KC_F8     ,       KC_WH_U   , KC_MS_L   , KC_MS_D   , KC_MS_R   , ___x___    },
-    {MKC_NAV   , KC_F9     , KC_F10    , KC_F11    , KC_F12    ,       KC_WH_D   , KC_BTN1   , KC_BTN2   , KC_BTN3   , MKC_SYM    },
+    {___x___   , KC_F1     , KC_F2     , KC_F3     , KC_F4     ,       KC_WH_U   , ___x___   , KC_MS_U   , ___x___   , ___x___    },
+    {___x___   , KC_F5     , KC_F6     , KC_F7     , KC_F8     ,       KC_WH_D   , KC_MS_L   , KC_MS_D   , KC_MS_R   , ___x___    },
+    {MKC_NAV   , KC_F9     , KC_F10    , KC_F11    , KC_F12    ,       ___x___   , KC_BTN1   , KC_BTN2   , KC_BTN3   , MKC_SYM    },
     {___x___   , ___x___   , ___x___   , ___x___   , ___x___   ,       ___x___   , KC_ACL2   , KC_ACL1   , ___x___   , ___x___    }, // TODO move ACLx to long press
     {___x___   , ___x___   , ___x___   , KC_LGUI   , KC_LCTL   ,       MKC_SHF   , KC_LALT   , KC_ACL0   , ___x___   , ___x___    }},
   // Nav + Sym + Shift
   [(1 << NAV) | (1 << SYM) | (1 << SHF)] = {
-    {S(___x___), S(KC_F1)  , S(KC_F2)  , S(KC_F3)  , S(KC_F4)  ,       S(___x___), S(___x___), S(KC_MS_U), S(___x___), S(___x___) },
-    {S(___x___), S(KC_F5)  , S(KC_F6)  , S(KC_F7)  , S(KC_F8)  ,       S(KC_WH_U), S(KC_MS_L), S(KC_MS_D), S(KC_MS_R), S(___x___) },
-    {S(MKC_NAV), S(KC_F9)  , S(KC_F10) , S(KC_F11) , S(KC_F12) ,       S(KC_WH_D), S(KC_BTN1), S(KC_BTN2), S(KC_BTN3), S(MKC_SYM) },
-    {S(___x___), S(___x___), S(___x___), S(___x___), S(___x___),       S(___x___), S(KC_ACL2), S(KC_ACL1), S(___x___), S(___x___) }, // TODO move ACLx to long press
-    {S(___x___), S(___x___), S(___x___), S(KC_LGUI), S(KC_LCTL),       S(MKC_SHF), S(KC_LALT), S(KC_ACL0), S(___x___), S(___x___) }},
+    {S(___x___), S(KC_F1)  , S(KC_F2)  , S(KC_F3)  , S(KC_F4)  ,       S(KC_WH_U), S(___x___), S(KC_MS_U), S(___x___), S(___x___) },
+    {S(___x___), S(KC_F5)  , S(KC_F6)  , S(KC_F7)  , S(KC_F8)  ,       S(KC_WH_D), S(KC_MS_L), S(KC_MS_D), S(KC_MS_R), S(___x___) },
+    {S(MKC_NAV), S(KC_F9)  , S(KC_F10) , S(KC_F11) , S(KC_F12) ,       S(___x___), S(KC_BTN1), S(KC_BTN2), S(KC_BTN3), S(MKC_SYM) },
+    {S(___x___), S(___x___), S(___x___), S(___x___), S(___x___),       S(___x___), S(KC_ACL2), S(___x___), S(___x___), S(___x___) }, // TODO move ACLx to long press
+    {S(___x___), S(___x___), S(___x___), S(KC_LGUI), S(KC_LCTL),       S(MKC_SHF), S(KC_LALT), S(___x___), S(___x___), S(___x___) }},
 };
 
 static bool mod_state[3] = {0, 0, 0};  // indexed with mitosis_mod
